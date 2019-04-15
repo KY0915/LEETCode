@@ -1,0 +1,27 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+   Reversing a linked list using recursion. bottom up approach.
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        return helper(head,null);
+    }
+    
+    public ListNode helper(ListNode cur,ListNode prev){        
+        if(cur==null)
+            return prev;
+        
+        ListNode next=cur.next;
+        cur.next=prev;
+        prev=cur;
+        
+        return helper(next,prev);
+        
+
+    }
+}
