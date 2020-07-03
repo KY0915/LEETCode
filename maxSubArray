@@ -1,0 +1,13 @@
+
+#Use Kadane's algorithm to find local maximum and compare/update with global maximum
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        lm= gm= nums[0]
+        
+        for i in range(1,len(nums)):
+            lm = max(nums[i],nums[i] + lm)
+            if lm >= gm:
+                gm = lm
+        
+        return gm
+        
