@@ -12,9 +12,7 @@ class Solution:
                 stack2.pop()
             if T[j]!='#':
                 stack2.append(T[j])
-        
-        print(stack)
-        print(stack2)
+ 
         if stack==stack2:
             return True
         else:
